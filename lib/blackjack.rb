@@ -62,24 +62,13 @@ end
 #####################################################
 
 def runner
-#   Welcome the user
-# Deal them their first two cards, i.e. their initial_round
-# Ask them if they want to hit or stay
-# If they want to hit, deal another card
-# If they want to stay, ask them again!
-# If their card total exceeds 21, the game ends.
 
-  
-    welcome
-  # initial_round
-  i = 0 
-  until i >= 21
-     i = hit?(initial_round)
-    puts "Your cards add up to #{i}"
-  end
-"Sorry, you hit #{i}. Thanks for playing!"
-
+welcome
+total = initial_round
+sum = 0
+until sum >=21
+sum = hit?(total)
+display_card_total(sum)
 end
-
-
-
+end_game(sum)
+end
